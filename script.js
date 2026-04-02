@@ -41,8 +41,8 @@ creatorCodeTargets.forEach((item) => {
 
 codeMessageTargets.forEach((item) => {
   item.textContent = creatorCode
-    ? `Use code ${creatorCode} at checkout to unlock your discount.`
-    : "Use your creator's code at checkout to unlock your discount.";
+    ? `Use code ${creatorCode} at checkout to unlock your exclusive offer.`
+    : "Use your creator's code to unlock your exclusive offer.";
 });
 
 urgencyMessageTargets.forEach((item) => {
