@@ -7,6 +7,7 @@ const creatorCodeTargets = document.querySelectorAll("[data-creator-code]");
 const creatorNameTargets = document.querySelectorAll("[data-creator-name]");
 const codeMessageTargets = document.querySelectorAll("[data-code-message]");
 const urgencyMessageTargets = document.querySelectorAll("[data-urgency-message]");
+const offerEndTargets = document.querySelectorAll("[data-offer-end]");
 
 const queryParams = new URLSearchParams(window.location.search);
 
@@ -28,6 +29,7 @@ const creatorDisplayName = normalizedCreatorName
   : "a creator you trust";
 const creatorCode = rawCreatorCode.trim();
 const creatorCodeDisplay = creatorCode || "your creator code";
+const offerEndDisplay = batchEnds || "soon";
 
 creatorNameTargets.forEach((item) => {
   item.textContent = creatorDisplayName;
@@ -39,14 +41,18 @@ creatorCodeTargets.forEach((item) => {
 
 codeMessageTargets.forEach((item) => {
   item.textContent = creatorCode
-    ? `Use code ${creatorCode} at checkout.`
-    : "Use your creator code at checkout.";
+    ? `Use code ${creatorCode} at checkout to unlock your discount.`
+    : "Use your creator's code at checkout to unlock your discount.";
 });
 
 urgencyMessageTargets.forEach((item) => {
   item.textContent = batchEnds
     ? `Current batch pricing ends ${batchEnds}.`
-    : "Current batch pricing is limited.";
+    : "Current batch pricing ends soon.";
+});
+
+offerEndTargets.forEach((item) => {
+  item.textContent = offerEndDisplay;
 });
 
 const utmSource = queryParams.get("utm_source") || "instagram";

@@ -607,6 +607,12 @@ header[id] {
   margin-top: 0.9rem;
 }
 
+.section-heading p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  max-width: 44rem;
+}
+
 .card-grid,
 .steps-grid {
   display: grid;
@@ -894,6 +900,20 @@ header[id] {
 .testimonial-card {
   display: grid;
   gap: 0.8rem;
+}
+
+.testimonial-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(126, 181, 255, 0.2);
+  border-radius: 999px;
+  color: #d8ebff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  background: rgba(11, 17, 28, 0.76);
 }
 
 .stars {
